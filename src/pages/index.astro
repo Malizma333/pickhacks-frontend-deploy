@@ -1,0 +1,98 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LandingPage from "../assets/landing-page.svg";
+import Sign from "../assets/sign-and-pigeon.svg";
+import Lillypad1 from "../assets/lillypad-1.svg";
+import Lillypad2 from "../assets/lillypad-2.svg";
+import Lillypad3 from "../assets/lillypad-3.svg";
+import Lillypad4 from "../assets/lillypad-4.svg";
+import Lillypad5 from "../assets/lillypad-5.svg";
+import Lillypad6 from "../assets/lillypad-6.svg";
+
+const days = [
+  {
+    label: "Friday, Feb 27",
+    events: [
+      { time: "3:00 PM", title: "Hacker Check-In" },
+      { time: "4:00 - 5:00 PM", title: "Opening Ceremony" },
+      { time: "5:00 PM", title: "Hacking Starts" },
+      { time: "6:00 - 7:00 PM", title: "Red Bull Workshop" },
+      { time: "7:00 - 8:00 PM", title: "Dinner" },
+      { time: "9:00 - 10:00 PM", title: "MLH Workshop" },
+      { time: "10:00 - 11:00 PM", title: "Late Night Snack" },
+    ],
+  },
+  {
+    label: "Saturday, Feb 28",
+    events: [
+      { time: "8:00 - 9:30 AM", title: "Breakfast" },
+      { time: "11:00 AM - 12:30 PM", title: "Sponsor Career Fair" },
+      { time: "12:30 - 1:30 PM", title: "Lunch" },
+      { time: "2:00 - 3:00 PM", title: "MLH Event" },
+      { time: "5:00 - 6:00 PM", title: "MLH Event" },
+      { time: "6:00 - 7:00 PM", title: "Dinner" },
+      { time: "7:30 PM", title: "MLH Workshop" },
+      { time: "10:00 PM", title: "Late Night Snack" },
+    ],
+  },
+  {
+    label: "Sunday, Mar 1",
+    events: [
+      { time: "8:00 - 9:30 AM", title: "Breakfast" },
+      { time: "11:00 AM", title: "Hacking Ends" },
+      { time: "10:00 AM - 2:00 PM", title: "Travel Reimbursement" },
+      { time: "11:00 AM - 1:00 PM", title: "Judging" },
+      { time: "1:00 - 2:00 PM", title: "Lunch" },
+      { time: "2:00 - 3:00 PM", title: "Closing Ceremony" },
+    ],
+  },
+];
+---
+
+<Layout>
+  <div class="relative w-full overflow-hidden">
+    <img class="block w-full h-auto align-middle" src={LandingPage.src} alt="PickHacks 2026" />
+    <img
+      class="absolute left-1/2 top-[30%] w-[60%] sm:top-[35%] sm:w-[50%] -translate-x-1/2 z-10"
+      src={Sign.src}
+      alt=""
+      aria-hidden="true"
+    />
+    <div class="schedule-list absolute p-2 left-1/2 top-[37%] sm:top-[41%] -translate-x-1/2 z-20 w-[40%] sm:w-[35%] overflow-y-auto max-h-[7%] sm:max-h-[5.25%]">
+      {days.map((day) => (
+        <div class="mb-2">
+          <p class="font-bold text-md sm:text-lg">{day.label}</p>
+          {day.events.map((event) => (
+            <p class="text-xs sm:text-sm">{event.time} - {event.title}</p>
+          ))}
+        </div>
+      ))}
+    </div>
+	<img src={Lillypad1.src} class="absolute left-[10%] top-[58%] w-[14%] z-10" aria-hidden="true" />
+	<img src={Lillypad2.src} class="absolute left-[18%] top-[66%] w-[14%] z-10" aria-hidden="true" />
+	<img src={Lillypad3.src} class="absolute left-[38%] top-[55%] w-[14%] z-10" aria-hidden="true" />
+	<img src={Lillypad4.src} class="absolute left-[48%] top-[66%] w-[14%] z-10" aria-hidden="true" />
+	<img src={Lillypad5.src} class="absolute left-[68%] top-[56%] w-[14%] z-10" aria-hidden="true" />
+	<img src={Lillypad6.src} class="absolute left-[75%] top-[63%] w-[14%] z-10" aria-hidden="true" />
+  </div>
+</Layout>
+
+<style>
+  .schedule-list {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.3) transparent;
+  }
+  .schedule-list::-webkit-scrollbar {
+    width: 4px;
+  }
+  .schedule-list::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .schedule-list::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 9999px;
+  }
+  .schedule-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.5);
+  }
+</style>
