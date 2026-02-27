@@ -10,6 +10,11 @@ import Lillypad5 from "../assets/lillypad-5.svg";
 import Lillypad6 from "../assets/lillypad-6.svg";
 import Bus from "../assets/bus.svg";
 import BusShadow from "../assets/bus-shadow.svg";
+import MetaQuest from '../assets/prizes/meta-quest.png';
+import RayBanMeta from '../assets/prizes/ray-ban-meta.png';
+import NordSecurity from '../assets/prizes/nord-security.png';
+import BeatsFitPro from '../assets/prizes/beats-fit-pro.png';
+import RedragonKeyboard from '../assets/prizes/redragon-keyboard.webp';
 
 const partnerModules = import.meta.glob('../assets/partners/*', { eager: true });
 const partners: string[] = Object.values(partnerModules).map((mod: any) => mod.default.src ?? mod.default);
@@ -212,6 +217,47 @@ const faqs = [
       ))}
     </div>
   </div>
+
+<section id="prizes" class="bg-[#3c3b3b] px-6 py-20">
+  <h2 class="mb-10 text-center text-6xl font-bold text-white">Prizes</h2>
+
+  <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 max-w-5xl mx-auto">
+
+    <!-- Best General - first in DOM so it's on top on mobile -->
+    <div class="col-span-2 row-span-2 bg-[#222222] border-2 border-[#bd6e44] rounded-2xl p-10 flex flex-col items-center text-center gap-4 order-1 lg:order-2">
+      <p class="text-xs text-[#bd6e44] uppercase tracking-widest font-bold">Best General</p>
+      <img src={MetaQuest.src} alt="Meta Quest 3" class="size-60 object-contain" />
+      <p class="text-white font-black text-2xl">Meta Quest 3</p>
+    </div>
+
+    <!-- Best AI - second in DOM so it's below Quest on mobile -->
+    <div class="bg-[#222222] rounded-md p-5 flex flex-col items-center text-center gap-3 order-2 lg:order-1">
+      <p class="text-xs text-[#bd6e44] uppercase tracking-widest font-bold">Best AI</p>
+      <img src={RayBanMeta.src} alt="Meta Glasses" class="h-30 w-40 object-contain" />
+      <p class="text-white font-bold">Meta Glasses</p>
+    </div>
+
+    <div class="bg-[#222222] rounded-md p-5 flex flex-col items-center text-center gap-3 order-3">
+      <p class="text-xs text-[#bd6e44] uppercase tracking-widest font-bold">Best Security</p>
+      <img src={NordSecurity.src} alt="NordVPN Package" class="h-30 w-40 object-contain" />
+      <p class="text-white font-bold">NordVPN Package</p>
+    </div>
+
+    <div class="bg-[#222222] rounded-md p-5 flex flex-col items-center text-center gap-3 order-4">
+      <p class="text-xs text-[#bd6e44] uppercase tracking-widest font-bold">Best Solo</p>
+      <img src={BeatsFitPro.src} alt="Beats Pro" class="size-30 object-contain" />
+      <p class="text-white font-bold">Beats Fit Pro</p>
+    </div>
+
+    <div class="bg-[#222222] rounded-md p-5 flex flex-col items-center text-center gap-3 order-5">
+      <p class="text-xs text-[#bd6e44] uppercase tracking-widest font-bold">Best Beginner</p>
+      <img src={RedragonKeyboard.src} alt="Keyboard" class="h-30 w-30 object-contain" />
+      <p class="text-white font-bold">Redragon K556</p>
+    </div>
+
+    <div class="text-center text-white font-bold text-2xl col-span-2 lg:col-span-4 order-6">and $500+ in other prizes!</div>
+  </div>
+</section>
 
   <section id="faq" class="bg-[#3c3b3b] px-6 py-20">
     <div class="mx-auto max-w-3xl">
